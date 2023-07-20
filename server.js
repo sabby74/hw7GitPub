@@ -10,18 +10,18 @@ app.get("/" , (req,res) =>{
     res.send("Welcome to Gitpub App!");
 });
 
-app.get("/drinks/", (req,res) =>{
-    res.render("index.ejs",{
-        drinks: drinks[req.params.id]
-    })
+app.get("/drinks", (req,res) =>{
+    res.send(drinks)
 })
 
 
 
 //show route
 app.get("/drinks/:id", (req,res) => {
-    res.send(drinks[req.params.id])
-})
+    res.render("index.ejs",{
+        drink: drinks[req.params.name]
+    })
+});
 app.get("/foods/:id", (req,res) => {
     res.send(foods[req.params.id])
 })
