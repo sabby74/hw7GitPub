@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/" , (req,res) =>{
-    res.send("Hello i am here");
+    res.send("Welcome to Gitpub App!");
 });
 
 app.listen(3000 ,() => {
