@@ -11,9 +11,8 @@ app.get("/" , (req,res) =>{
 });
 
 app.get("/drinks", (req,res) => {
-    res.render("index.ejs",{
-        drink: drinks[req.params.name]
-    })
+    res.send(drinks)
+    
 });
 
 
