@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitPub App</title>
+  <style>
+    body {
+      color: blanchedalmond;
+      background-color: rgb(170, 191, 31);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome To Gitpub!</h1>
+  <h2>Name: <%= drink.name.charAt(0).toUpperCase() + drink.name.slice(1) %></h2>
+  <img src="<%= drink.image %>" alt="<%= drink.name %>">
+  <h3>Price in $ : <%= drink.price %></h3>
+  <a href="/drinks">Back</a>
+</body>
+</html>

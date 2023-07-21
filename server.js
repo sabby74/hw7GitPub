@@ -1,9 +1,10 @@
 const express = require("express");
 
 const app = express();
+
 const drinks = require("./models/drinks.js")
 
-const foods = require("./models/food.js")
+const foods = require("./models/foods.js")
 
 
 app.get("/" , (req,res) =>{
@@ -14,22 +15,40 @@ app.get("/drinks", (req,res) => {
     res.send(drinks)
     
 });
+app.get("/foods", (req,res) => {
+    res.send(foods)
+})
 
 
 //show route
 
 
 app.get("/drinks/:id", (req,res) => {
-    res.render("index.ejs",{
+    res.render("drinks_show.ejs", {
         drink: drinks[req.params.id]
     })
 });
 
-
-
 app.get("/foods/:id", (req,res) => {
-    res.send(foods[req.params.id])
+    res.render("food_show.ejs", {
+        food: foods[req.params.id]
+    })
 })
+
+// app.get('/drinks/:id', (req, res) => {
+//     const id = req.params.id;
+//     if (id >= 0 && id < drinks.length) {
+//       const drink = drinks[id];
+//       res.render('drinks_show.ejs', { drink });
+//     } else {
+//       res.send('Drink not found');
+//     }
+//   });
+  
+
+
+
+
 
 app.listen(3000 ,() => {
     console.log("server is listening on port 3000");
