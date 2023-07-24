@@ -24,14 +24,18 @@ app.get("/foods", (req,res) => {
 
 
 app.get("/drinks/:id", (req,res) => {
-    res.render("drinks_show.ejs", {
-        drink: drinks[req.params.id]
+    res.render("drinks_show.ejs", { 
+        drink: drinks[req.params.id],
+        
     })
 });
-
+/* both the routes are working perfectly if we use the route in browser 
+but when  i am trying to render drinks2_show.ejs in above route  ,it throughs an error 
+*/
 app.get("/foods/:id", (req,res) => {
     res.render("food_show.ejs", {
-        food: foods[req.params.id]
+        food: foods[req.params.id],
+       
     })
 })
 
@@ -50,6 +54,6 @@ app.get("/foods/:id", (req,res) => {
 
 
 
-app.listen(3000 ,() => {
+app.listen(2000 ,() => {
     console.log("server is listening on port 3000");
 });

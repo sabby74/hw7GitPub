@@ -4,6 +4,7 @@
   <title>GitPub app</title>
   <style>
     body {
+        text-align: center;
       color: blanchedalmond;
       background-color: steelblue;
     }
@@ -11,21 +12,21 @@
 </head>
 <body>
   <h1>Welcome to gitPub</h1>
-  <h2>Drinks:</h2>
+  <h2>Drinks Menu:</h2>
   <ul>
     <% drinks.forEach((drink) => { %>
       <li>
-        <a href="/drinks/<%= drinks.name %>">
+        <a href="/drinks/<%= drinks.indexOf(drink) %>">
           <%= drink.name.charAt(0).toUpperCase() + drink.name.slice(1) %>
         </a>
       </li>
     <% }) %>
   </ul>
-  <h2>Food:</h2>
+  <h2>Food Menu:</h2>
   <ul>
-    <% food.forEach((item) => { %>
+    <% foods.forEach((food) => { %>
       <li>
-        <a href="/food/<%= food.indexOf(item) %>">
+        <a href="/foods/<%= food.indexOf(food) %>">
           <%= item.name.charAt(0).toUpperCase() + item.name.slice(1) %>
         </a>
       </li>
