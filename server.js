@@ -38,6 +38,13 @@ app.get("/foods/:id", (req,res) => {
        
     })
 })
+app.get("/GitpubMenu", (req,res) => {
+    res.render("drinks_index.ejs", {
+        drinks,
+        foods,
+       
+    })
+})
 
 // app.get('/drinks/:id', (req, res) => {
 //     const id = req.params.id;
@@ -55,5 +62,5 @@ app.get("/foods/:id", (req,res) => {
 
 
 app.listen(2000 ,() => {
-    console.log("server is listening on port 3000");
+    console.log("server is listening on port 2000");
 });
