@@ -29,9 +29,7 @@ app.get("/drinks/:id", (req,res) => {
         
     })
 });
-/* both the routes are working perfectly if we use the route in browser 
-but when  i am trying to render drinks2_show.ejs in above route  ,it throughs an error 
-*/
+
 app.get("/foods/:id", (req,res) => {
     res.render("food_show.ejs", {
         food: foods[req.params.id],
